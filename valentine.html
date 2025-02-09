@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #C8A2C8; /* Lila */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 90%;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            color: red;
+        }
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+            height: 100px;
+        }
+        button {
+            font-size: 24px;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 10px;
+        }
+        .yes {
+            background-color: red;
+            color: white;
+        }
+        .yes:hover {
+            background-color: darkred;
+        }
+        .no {
+            background-color: white;
+            color: red;
+            border: 2px solid red;
+            position: absolute;
+        }
+        #message {
+            font-size: 24px;
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine?</h1>
+        <div class="buttons">
+            <button class="yes" onclick="showLove()">Yes</button>
+            <button class="no" id="noBtn">No</button>
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function showLove() {
+            document.getElementById("message").innerText = "Yay! Te iubesc, soția mea goblină! ❤";
+        }
+
+        function moveButton() {
+            let btn = document.getElementById("noBtn");
+            let x = Math.random() * (window.innerWidth - btn.offsetWidth);
+            let y = Math.random() * (window.innerHeight - btn.offsetHeight);
+            btn.style.left = x + "px";
+            btn.style.top = y + "px";
+        }
+
+        document.getElementById("noBtn").addEventListener("mouseover", moveButton); // Pentru PC
+        document.getElementById("noBtn").addEventListener("touchstart", moveButton); // Pentru telefon
+    </script>
+</body>
+</html>
