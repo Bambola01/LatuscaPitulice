@@ -57,13 +57,6 @@
             color: red;
             margin-top: 20px;
         }
-        #loveImage {
-            display: none;
-            margin-top: 20px;
-            width: 300px;
-            max-width: 90%;
-            border-radius: 10px;
-        }
     </style>
 </head>
 <body>
@@ -74,13 +67,11 @@
             <button class="no" id="noBtn">No</button>
         </div>
         <p id="message"></p>
-        <img id="loveImage" src="https://tenor.com/view/cat-hugs-rose-roses-flower-gif-2102180158396711286" alt="Romantic Image">
     </div>
 
     <script>
         function showLove() {
             document.getElementById("message").innerText = "Yay! Te iubesc, soția mea goblină! ❤";
-            document.getElementById("loveImage").style.display = "block";
         }
 
         function moveButton() {
